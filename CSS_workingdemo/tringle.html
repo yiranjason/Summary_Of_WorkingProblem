@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>使用css3绘制三角形</title>
+    <style type="text/css">
+        #triangle_up {width:0; height:0; border-left:30px solid transparent; border-right:30px solid transparent; border-bottom:100px solid red;}
+        #triangle_down {width:0; height:0; border-left:30px solid transparent; border-right:30px solid transparent; border-top:60px solid blue;}
+        #triangle_left {width:0; height:0; border-top:30px solid transparent; border-bottom:30px solid transparent; border-right:60px solid green;}
+        #triangle_right {width:0; hieght:0; border-top:30px solid transparent; border-bottom:30px solid transparent; border-left:60px solid yellow;}
+        
+        #Hollowtriangle {width:0; height:0; border-top:90px solid transparent; border-right:100px solid black; border-bottom:100px solid transparent; position:relative;}
+        #Hollowtriangle::after {content: ''; position:absolute; top:-89px; left:20px; border-top:89px solid transparent; border-bottom:99px solid transparent; border-right:99px solid #fff;}
+    </style>
+</head>
+<body>
+    <!--实心三角形主要的四个方向-->
+    <div id="triangle_up"></div>
+    <div id="triangle_down"></div>
+    <div id="triangle_left"></div>
+    <div id="triangle_right"></div>
+    
+    <!--空心三角形==箭头@>@<-->
+    <div id="Hollowtriangle"></div>
+</body>
+</html>
