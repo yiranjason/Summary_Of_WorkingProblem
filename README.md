@@ -4,7 +4,7 @@
 ### CSS_workingdemo
 
 - triangle.html [CSS绘制三角形]
-- [triangle.html](https://github.com/yiranjason/Summary_Of_WorkingProblem/blob/master/tringle.html, "CSS绘制三角形")
+- [triangle.html](https://github.com/yiranjason/Summary_Of_WorkingProblem/blob/master/tringle.html "CSS绘制三角形")
 
 
 ### JS_workingdemo
