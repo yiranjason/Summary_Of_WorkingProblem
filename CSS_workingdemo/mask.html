@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>遮罩层的简易实现</title>
+    <style>
+        .mask {
+            diaplay:none;
+            poaition:acsolute;
+            left:0;
+            right:0;
+            top:0;
+            bottom:0;
+            background:rgba(0,0,0,.3);
+            z-index:2;
+        }
+        .maskstyle {
+            width:100%;
+            height:100%;
+            position:fixed;
+            overflow:hidden;
+        }
+    </style>
+</head>
+<body>
+    <div id="button">遮罩层</div>
+    <div class="mask"></div>
+</body>
+<script src="http://code.jquery.com/jquery-3.2.1.min.js "></script>
+<script>
+    $('#button').click(function(){
+        $('.mask').show();
+        $('html,body').addClass('maskstyle');
+    })
+</script>
+</html>
