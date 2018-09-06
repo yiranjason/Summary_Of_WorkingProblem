@@ -8,4 +8,4 @@
 
 ### JS_workingdemo
 
-- remeber_pass.html [记住密码操作](https://github.com/yiranjason/Summary_Of_WorkingProblem/blob/master/remeber_pass.html "记住密码操作")
+- remeber_pass.html [记住密码操作](https://github.com/yiranjason/Summary_Of_WorkingProblem/blob/master/remeber_pass "记住密码操作")
