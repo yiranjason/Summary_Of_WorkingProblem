@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MyDatePicker控件的使用</title>
+    <!--step1:在需要使用My97DatePicker控件的页面中引入相应的js文件-->  
+    <script src="javascript/DatePicker/WdatePicker.js"></script>
+</head>
+<body>
+    <!--step2:对于需要使用控件的input输入框显示选择的时间，在标签内加上一段代码：onclick="WdatePicker()"-->
+    
+    <!--触发方式No.1:常规选择，直接调用-->
+    <div class="mode1">
+        <input type="text" placeholder="开始时间" onclick="WdatePicker()" />
+        <em>至</em>
+        <input type="text" placeholder="结束时间" onclick="WdatePicker()" />
+    </div>
+    <!--触发方式No.2:使用图标触发，具体到日常项目中即为对应的日期选择小图标-->
+    <div class="mode2" style="margin-top:30px;">
+        <input type="text" id="mode2_input">
+        <img src="calendar.png" alt="日历选择" width="16" hieght="22" align="absmiddle" onclick="WdatePicker({el:'mode2_input'})"><!--需要传入一个参数，即调用控件触发的ID名-->
+    </div>
+    
+    <!--常规功能No.1：关于周的显示-->
+    <!--@@>> onclick="WdatePicker({isShowWeek:true})" -->
+    
+    <a style="font-size:16px; color:red;" href="http://www.my97.net/demo/index.htm">关于更多的My97DatePicker控件的使用</a>
+    
+</body>
+</html>
