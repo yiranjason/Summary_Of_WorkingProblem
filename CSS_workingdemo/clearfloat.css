@@ -1,0 +1,24 @@
+/*清除浮动的几种方式*/
+
+/*start 20180906 Jason1011 modify*/
+
+/*结构说明：<ul class="box"><li class="fl"></li><li class="fr"></li></ul>*/
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+/*Way01*/
+.box {
+    clear: both;
+}
+
+.box::after {
+    content: '';
+    height: 0;
+    display: block;
+    visibility: hidden;
+}
