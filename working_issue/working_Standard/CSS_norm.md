@@ -14,7 +14,6 @@
 ------
 
 > css简写，用以提升下载速度，减少文件大小，代码简洁可读
-
 >> -  ~~`margin-top：0; margin-right:10px; margin-bottom:10px; margin-left:0;`~~
    * __`margin:0 10px 10px 0;`__
 >> - ~~`border-width:2px; border-style:solid; border-color:#000`~~
