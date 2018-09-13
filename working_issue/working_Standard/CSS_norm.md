@@ -32,4 +32,15 @@
 >>> __`list-style:square inside url('filename.gif');`__
 
 ------
-    
+
+> 注释中应尽量使用英文代替中文注释，目的为防止编码错误时乱码的情况发生.
+>> font-family中遇到中文字体样式也应当使用英文表示：
+>> - 黑體：SimHei;
+>> - 宋體：SimSun;  [由於Opera和Safari不認識SimSun,所以盡量用'宋體']
+>> - 新宋體：NSimSun;
+>> - 仿宋：FangSong;
+>> - 楷體：KaiTi;
+>> - 仿宋_GB2312：FangSong_GB2312;
+>> - 微軟正黑體：Microsoft_JhengHei;
+>> - 微軟雅黑：Microsoft_YaHei;
+
