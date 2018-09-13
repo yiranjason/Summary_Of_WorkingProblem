@@ -1,6 +1,6 @@
 ## CSS编写规范
 
-> 编码：@charset "utf-8"
+#### 编码：@charset "utf-8"
 
 ------
 
