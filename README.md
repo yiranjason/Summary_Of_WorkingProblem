@@ -3,7 +3,9 @@
 
 ### CSS_workingdemo
 
-> float.css [清除浮动]
+> clearfloat.css [清除浮动]
+
+> compatible.css [CSS兼容问题总结]
 
 > mask.html [遮罩层的实现]
 
