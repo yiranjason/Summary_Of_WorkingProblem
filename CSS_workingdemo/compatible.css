@@ -1,0 +1,21 @@
+/*关于CSS中的部分兼容问题的写法汇总*/
+
+/*compatible_01:背景的颜色渐变的写法*/
+.bgGradientcolor {
+    background:#008ce4; background-size:250% 100%;
+    background: -webkit-gradient(linear, 0 100%, 0 0, from(#0981c7), to(#008de7), to(#0981c7));
+    background: -webkit-linear-gradient(left, #002740, #008de7, #002740);
+    background: -moz-linear-gradient(left, #002740, #008de7, #002740);
+    background: -o-linear-gradient(left, #002740, #008de7, #002740);
+    background: -ms-linear-gradient(left, #002740, #008de7, #002740);
+    background: linear-gradient(left, #002740, #008de7, #002740);
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType = 1, startColorstr = #002740, endColorstr = #008de7);
+}
+
+/*compatible_02:input输入框中的placeholder属性的兼容性写法*/
+/*input_placeholder*/
+input::-webkit-input-placeholder {color:#999;}
+input::-moz-placeholder {color:#999;}
+input:-moz-placeholder {color:#999;}
+input:-ms-input-placeholder {color:#999;}
+
