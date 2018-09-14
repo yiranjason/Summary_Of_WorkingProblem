@@ -44,3 +44,34 @@
 >> - 微軟正黑體：Microsoft_JhengHei;
 >> - 微軟雅黑：Microsoft_YaHei;
 
+------
+
+> 属性相关以及CSS优化
+>> - 减少代码占用空间，提高易读性，尽量将同一class类名的相关样式控制写在一行上面。
+>> - 背景图片应尽量使用sprite技术，减少http请求
+>> - 在声明样式控制时，应将同一类的属性声明放到一起，并按照一定顺序排列，通常采用以下的顺序：
+>>> 1. Position(position-->top-->right-->bottom-->left-->z-index)
+>>> 2. BoxModel(display-->float-->width-->height)
+>>> 3. Typographic(font-->line-height-->color-->text-align)
+>>> 4. Visual(backgroun-color-->border-->border-radius)
+>>> 5. Misc(opcaity)
+
+------
+
+> 特定的兼容性写法
+>> -moz-:firefox; -ms-:ie; -webkit-:safari\chrome;
+>>
+>> 在使用时的写法顺序：
+>>
+>> __```-moz-box-shadow:0 1px 2px rgba(0,0,0,.15); 
+>>      -ms-box-shadow:0 1px 2px rgba(0,0,0,.15);
+>>      -webkit-box-shadow:0 1px 2px rgba(0,0,0,.15); 
+>>      box-shadow:0 1px 2px rgba(0,0,0,.15);```__
+
+------
+
+> CSS hack：由于不同的浏览器对于css的解析不一致，需要针对不同的浏览器写不同的CSS，常见的是（"\9","*","!important"）
+> [通常不建议使用，尽力从自身的代码进行优化，CSS hack不是W3C认可的方式]
+
+------
+
