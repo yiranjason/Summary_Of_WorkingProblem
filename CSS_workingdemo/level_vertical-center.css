@@ -1,0 +1,41 @@
+/*CSS-->經典-水平垂直居中對齊*/
+
+/*
+demo___html
+
+<div class="wp">
+    <div class="box size">這是内容存放的盒子</div>
+</div>
+
+*/
+
+/*定義樣式助於理解*/
+.wp {border:1px solid #ddd; width:300px; height:300px;}
+.box {background:#f99;}
+.box.size {width:100px; hieght:100px;}
+/*元素定寬高的情況：*/
+
+/*dkg_01.absolute+負margin*/
+.wp {position:relative;}
+.box {position:absolute; left:50%; top:50px; margin-left:-50px; margin-top:-50px;}
+
+/*dkg_02.absolute+margin auto*/
+.wp {position:relative;}
+.box {position:absolute; left:0; top:0; right:0; bottom:0; margin:auto;}
+
+/*dkg_03.absolute+calc*/
+.wp {position:relative;}
+.box {position:absolute; top:calc(50% -50px); left:(50% -50px);}
+
+/*元素不定寬高的情況：*/
+
+/*bdkg_01.absolute+transform*/
+.wp {position:relative;}
+.box {position:absolute; top:50%; left:50%; transform(-50%,-50%);}
+/*-------->>>>>>>這種方法需要考慮transform,即translate2d得兼容性*/
+
+/*bdkg_02.lineheight*/
+.wp {line-height:300px; text-align:center; font-size:0px;}
+.box {font-size:16px; display:inline-block; vertical-align:middle; line-height:initital; text-align:left;}
+
+/*bdkg_03.writimg-mode*/
