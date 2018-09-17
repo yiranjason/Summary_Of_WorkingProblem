@@ -38,4 +38,10 @@ demo___html
 .wp {line-height:300px; text-align:center; font-size:0px;}
 .box {font-size:16px; display:inline-block; vertical-align:middle; line-height:initital; text-align:left;}
 
-/*bdkg_03.writimg-mode*/
+/*bdkg_03.writimg-mode*//*----->>>>>>>>>>#########神奇的用法，來源于【張鑫旭】##########<<<<<<<<-------------*/
+/*---->>>>使用這個屬性方法時候。需要有一定條件：其結構變成了<div.wp><div.wp-inner><div.box></div></div></div>*/
+.wp {writing-mode:vertical-lr; text-align:center;}
+.wp-inner {writing-mode:horizontal-tb; display:inline-block; text-align:center; width:100%;}
+.box {display:inline-block; margin:auto; text-align:left;}
+
+/**/
