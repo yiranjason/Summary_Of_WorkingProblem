@@ -44,4 +44,13 @@ demo___html
 .wp-inner {writing-mode:horizontal-tb; display:inline-block; text-align:center; width:100%;}
 .box {display:inline-block; margin:auto; text-align:left;}
 
-/**/
+/*bdkg_04.css-table*/
+.wp {display:table-cell; text-align:center; vertical-align:middle;}
+.box {display:inline-block;}
+
+/*bdkg_05.flex*/
+.wp {display:flex; justify-content:center; align-items: center;}
+
+/*bdkg_06.grid*/
+.wp {display:grid;}
+.box {align-self:center; justify-self:center;}
