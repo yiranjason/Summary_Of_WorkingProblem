@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSS美化重置radio\checkbox的样式【自定义样式】</title>
+    <style>
+
+         .radio-name {
+            vertical-align: middle;
+            font-size: 16px;
+        }
+        .radio-beauty {
+            width: 18px;
+            height: 18px;
+            box-sizing: border-box;
+            display: inline-block;
+            border: 1px solid green;
+            vertical-align: middle;
+            margin: 0 15px 0 3px;
+            border-radius: 50%;
+            &:hover {
+                box-shadow: 0 0 7px green;
+                padding: 2px;
+            background-color: green;
+            background-clip: content-box;
+            }
+        }
+        input[type="radio"]:checked+.radio-beauty {
+            padding: 2px;
+            background-color: green;
+            background-clip: content-box;
+        }
+
+        /*------------checkbox-----------------*/
+        .check_beauty {
+            position: relative;
+            width: 18px;
+            height: 18px;
+            box-sizing: border-box;
+            display: inline-block;
+            border: 1px solid #3e97eb;
+            border-radius: 3px;
+            vertical-align: middle;
+        }
+        .magic-checkbox:checked+.check_beauty {
+            background-color: #3e97eb;
+        }
+        .magic-checkbox:checked+.check_beauty .get {
+            width: 5px;
+            height: 10px;
+            display: inline-block;
+            border: 2px solid #fff;
+            border-left: 0;
+            border-top: 0;
+            margin-left: 4px;
+            margin-bottom: 5px;
+            transform: rotate(45deg);
+        }
+
+
+/*        以上的方法在对于IE8时使用，存在兼容问题，可考虑使用其他方法【如背景图片】*/
+    </style>
+</head>
+
+<body>
+    <div class="requirement">
+        <label>
+            <input type="checkbox" class="magic-checkbox" hidden="hidden">
+            <span class="check_beauty">
+                <span class="get"></span>
+            </span>
+            <span class="check_name">我已阅读并接受<a href="#">《网上预约协议》</a></span>
+        </label>
+    </div>
+    <div class="requirement">
+        <label>
+            <input type="checkbox" class="magic-checkbox" hidden="hidden">
+            <span class="check_beauty">
+                <span class="get"></span>
+            </span>
+            <span class="check_name">我已阅读并接受<a href="#">《网上预约协议》</a></span>
+        </label>
+    </div>
+
+    <div class="radio-beauty-container">
+        <label>
+            <span class="radio-name">前端工程师</span>
+            <input type="radio" name="radioName" id="radioName1" hidden/>
+            <label for="radioName1" class="radio-beauty"></label>
+        </label>
+        <label>
+            <span class="radio-name">后端工程师</span>
+            <input type="radio" name="radioName" id="radioName2" hidden/>
+            <label for="radioName2" class="radio-beauty"></label>
+        </label>
+        <label>
+            <span class="radio-name">全栈工程师</span>
+            <input type="radio" name="radioName" id="radioName3" hidden/>
+            <label for="radioName3" class="radio-beauty"></label>
+        </label>
+    </div>
+</body>
+
+</html>
