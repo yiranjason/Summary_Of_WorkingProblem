@@ -19,3 +19,20 @@ input::-moz-placeholder {color:#999;}
 input:-moz-placeholder {color:#999;}
 input:-ms-input-placeholder {color:#999;}
 
+/*compatible_03:background-opacity的兼容处理*/
+/*在FF\Chrome等高阶浏览器中使用rgba即可实现，但是在垃圾的IE浏览器下面是不兼容rgba的写法。*/
+.background-opacity{rgba(0,0,0,.5);filter:alpha(opacity=50);}
+/*进阶处理：背景有透明度需求，但是div盒子里的内容不需要做透明处理。*/
+.box {filter:progid.DXImageTransform.Microsoft.gradient(GradientType = 1, startColorstr = #80000000, endColorstr = #80000000);}
+:root .box {filter:none; background:#000; rgba(0,0,0,.5);}
+
+/*----------------备注用法细节-----------------*/
+/*GradientType: 参数1-->横向渐变  参数0-->纵向渐变*/
+/*startColorstr/endColorstr: ---后6位是代表颜色【十六进制颜色】---前两位代表的是透明度【opacity】*/
+/*对应的公式数字：
+
+rgba:      # 0.1 ### 0.2 ### 0.3 ### 0.4 ### 0.5 ### 0.6 ### 0.7 ### 0.8 ### 0.9 #
+           #######################################################################
+iefilter:  # 19  ### 33  ### 4C  ### 66  ### 7F  ### 99  ### B2  ### C8  ### E5  #
+
+*/
