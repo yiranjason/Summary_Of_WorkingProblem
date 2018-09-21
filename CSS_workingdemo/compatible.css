@@ -24,7 +24,7 @@ input:-ms-input-placeholder {color:#999;}
 .background-opacity{rgba(0,0,0,.5);filter:alpha(opacity=50);}
 /*进阶处理：背景有透明度需求，但是div盒子里的内容不需要做透明处理。*/
 .box {filter:progid.DXImageTransform.Microsoft.gradient(GradientType = 1, startColorstr = #80000000, endColorstr = #80000000);}
-:root .box {filter:none; background:#000; rgba(0,0,0,.5);}
+:root .box {filter:none; background:#000; rgba(0,0,0,.5);}/*——————IE9不需要filter*/
 
 /*----------------备注用法细节-----------------*/
 /*GradientType: 参数1-->横向渐变  参数0-->纵向渐变*/
