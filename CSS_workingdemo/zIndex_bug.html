@@ -23,6 +23,24 @@
             该文本包含在div元素中。。。。。。。。。。。。。。。
         </div>
     </div>
+
+    <p>Case03:父元素的层叠优先级比其他元素低</p>
+    <hr>
+    <div style="height: 150px;">
+        <div style="z-index:1;position:absolute;background-color:#16a085;height:150px;width:150px;"></div>
+        <div style="z-index:-1;position:relative;color:#ff0000;">
+            <div style="z-index:999;position:relative;">该文本包含在div元素中。。。。。。。。。。。。。。。</div>
+    </div>
+
+    <p>Case04:IE6-7中父元素没有设置z-index即被视为非层叠元素</p>
+    <hr>
+    <div style="height: 150px;">
+    <div style="z-index:1;position:absolute;background-color:#16a085;height:150px;width:150px;"></div>
+    <div style="position:relative;color:#ff0000;">
+        <div style="z-index:999;position:relative;">该文本包含在div元素中。。。。。。。。。。。。。。。</div>
+    </div>
+</div>
+</div>
 </div>
 </body>
 </html>
