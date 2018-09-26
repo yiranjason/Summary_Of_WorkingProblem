@@ -5,7 +5,24 @@
     <title>z-index属性失效产生的原因及解决方法</title>
 </head>
 <body>
+    <h2>分析z-index属性使用及失效问题的前提————红色文本在绿色方块盒子之上视为正常</h2>
+    <p>Case01:正常的使用情况</p>
+    <hr>
+    <div style="height: 150px;">
+        <div style="z-index:1;position:absolute;background-color:#16a085;height:150px;width:150px;"></div>
+        <div style="z-index:999;position: relative;color:#ff0000;">
+            该文本包含在div元素中。。。。。。。。。。。。。。。
+        </div>
+    </div>
 
-
+    <p>Case02:未对定义z-index属性的元素加以定位属性——{position:relative\absolute\fixed}</p>
+    <hr>
+    <div style="height: 150px;">
+        <div style="z-index:1;position:absolute;background-color:#16a085;height:150px;width:150px;"></div>
+        <div style="z-index:999;color:#ff0000;">
+            该文本包含在div元素中。。。。。。。。。。。。。。。
+        </div>
+    </div>
+</div>
 </body>
 </html>
