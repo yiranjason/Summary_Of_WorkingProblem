@@ -14,9 +14,8 @@
       产品参数
     </swiper-item>
   </swiper>
-</view> ```
-
-```  css
+</view>```
+``` css
 .swiper-tab{  
     width: 100%;  
     border-bottom: 2rpx solid #eee;  
