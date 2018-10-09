@@ -1,0 +1,22 @@
+/*文本内容的颜色渐变实现*/
+
+/*html:
+*  <h2 class="text-gradient" data-text="我的SubMara玥"></h2>
+*/
+
+/*case01: mask-image*/
+
+.text-gradient {
+    display:inline-block;
+    font-family:"微软雅黑";
+    font-size:10em;
+    position:relative;
+}
+.text-gradient[data-text]::after {
+    content:attr(data-text);
+    color:green;
+    position:absolute;
+    left:0;
+    z-index:2;
+    -webkit-mask-image:-webkit-gradient(linear,0,0,0 bottom, from(#ff0000),to(rgba(0,0,255,0)));
+}
