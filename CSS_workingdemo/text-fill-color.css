@@ -20,3 +20,16 @@
     z-index:2;
     -webkit-mask-image:-webkit-gradient(linear,0,0,0 bottom, from(#ff0000),to(rgba(0,0,255,0)));
 }
+
+
+/*case02: background-clip + text-fill-color*/
+
+.text-gradient {
+    display:inline-block;
+    font-family:"微软雅黑";
+    font-size:10em;
+    color:green;
+    background-image:-webkit-gradient(linear,0,0,0 bottom, from(rgba(0,128,0,1),to(rgba(51,51,51,1)));
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
