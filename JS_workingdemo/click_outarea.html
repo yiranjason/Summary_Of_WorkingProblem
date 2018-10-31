@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>点击某元素外的区域隐藏该元素</title>
+</head>
+<body>
+    <!--***点击元素外使元素消失，常见的是搜索下拉框，点击网页其他区域隐藏该下拉框***-->
+    <script>
+        //点击DIV_one外的任何地方使得DIV_two消失，通常下拉框属于DIV_two,DIV_one代表的是包含input输入和下拉框的大的外部盒子
+        $(document).mouseup(function(e){
+            var _con = $('.DIV_one');
+            if(!_con.is(e.target) && _con.has(e.target).length === 0){
+                $('.DIV_two').hide();
+            }
+        })
+    </script>
+</body>
+</html>
