@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>六芒图</title>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/core.js"></script>
+    <script src="echarts/echarts.js"></script>
+    <style>
+        html,body {background:#f99;}
+    </style>
+</head>
+<body>
+    <div id="SubMara" style="width:600px; height:600px; margin:50px auto;"></div>
+
+    <script>
+        /**
+        * 六芒图---雷达图的变形
+        */
+        var SubMara = echarts.init(document.getElementById("SubMara"));
+        var option = {
+            radar:[
+                {
+                    indicator:[
+                        {text:"成交\n金额",max:10},
+                        {text:"成交\n场次",max:10},
+                        {text:"报价\n场次",max:10}
+                    ],
+                    center:["60%","50%"],
+                    radius:280,
+                    startAngle:60,
+                    splitNumber:4,
+                    shape:"circle",
+                    name:{
+                        formatter:"{value}",
+                        textStyle:{
+                            fontSize:40,
+                            color:"#fffaee",
+    //                        lineHeight:80,
+                        }
+                    },
+                    nameGap:40,
+                    splitArea:{
+                        interval:"auto",
+                        show:true,
+                        areaStyle:{
+                            color:"rgba(255,255,255,0)"
+                        }
+                    },
+                    splitLine: {
+                        lineStyle: {
+                            type:'dashed',
+                            color: 'rgba(255, 255, 255,.24)'
+                        }
+                    },
+                    axisLine:{
+                        show:true,
+                        lineStyle:{color:"rgba(255,255,255,.24)",width:2}
+                    }
+
+                }
+            ],
+            series:[
+                {
+                    type:"radar",
+                    itemStyle:{
+                        normal:{
+                            areaStyle:{type:"default",opacity:.4}
+                        }
+                    },
+                    data:[
+                        {
+                            value:[6,7,3],
+                            symbol:'rect',
+                            symbolSize:5,
+                            lineStyle:{
+                                normal:{
+                                    type:"solid",
+                                    color:"#3870ff"
+                                }
+                            },
+                            areaStyle:{
+                                normal:{
+                                    color:"rgba(28,36,107,1)"
+                                }
+                            },
+                            itemStyle:{
+                                normal:{
+                                    color:"#3870ff",
+                                    width:5
+                                }
+                            }
+                        }
+                    ]
+
+                }
+            ]
+        }
+        SubMara.setOption(option);
+    </script>
+</body>
+</html>
