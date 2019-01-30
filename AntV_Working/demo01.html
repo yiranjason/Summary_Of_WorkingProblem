@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,height=device-height">
+    <title>自定义柱状图</title>
+    <style>::-webkit-scrollbar{display:none;}html,body{overflow:hidden;height:100%;margin:0;}</style>
+</head>
+<body>
+<div id="mountNode"></div>
+<script>/*Fixing iframe window.innerHeight 0 issue in Safari*/document.body.clientHeight;</script>
+<script src="https://gw.alipayobjects.com/os/antv/pkg/_antv.g2-3.4.1/dist/g2.min.js"></script>
+<script>
+var data = [{
+  "name": "John",
+  "vote": 35654
+}, {
+  "name": "Damon",
+  "vote": 65456
+}, {
+  "name": "Patrick",
+  "vote": 45724
+}, {
+  "name": "Mark",
+  "vote": 13654
+}];
+var imageMap = {
+  'John': 'https://zos.alipayobjects.com/rmsportal/mYhpaYHyHhjYcQf.png',
+  'Damon': 'https://zos.alipayobjects.com/rmsportal/JBxkqlzhrlkGlLW.png',
+  'Patrick': 'https://zos.alipayobjects.com/rmsportal/zlkGnEMgOawcyeX.png',
+  'Mark': 'https://zos.alipayobjects.com/rmsportal/KzCdIdkwsXdtWkg.png'
+};
+var chart = new G2.Chart({
+  container: 'mountNode',
+  forceFit: true,
+  height: window.innerHeight,
+  padding: [60, 20, 40, 60]
+});
+chart.source(data, {
+  vote: {
+    min: 0
+  }
+});
+chart.legend(false);
+chart.axis('vote', {
+  labels: null,
+  title: null,
+  line: null,
+  tickLine: null
+});
+chart.interval().position('name*vote').color('name', ['#7f8da9', '#fec514', '#db4c3c', '#daf0fd']);
+chart.point().position('name*vote').size(60).shape('name', function(name) {
+  return ['image', imageMap[name]];
+});
+chart.render();
+</script>
+</body>
+</html>
