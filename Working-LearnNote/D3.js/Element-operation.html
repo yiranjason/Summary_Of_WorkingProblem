@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Element operation--D3.js/元素增删改操作</title>
+    <script src="https://cdn.bootcss.com/d3/5.9.0/d3.min.js"></script>
+</head>
+<body>
+    <p>Empty</p>
+    <p class="lastwo" id="spec">Secruity</p>
+    <p class="lastwo" id="move">Option</p>
+
+    <script>
+        var p1 = d3.select("body").select("p");//----->这种情况下默认选中第一个
+        p1.style("color","red");
+
+        var p2 = d3.selectAll(".lastwo");//选择带有class类名或id
+        p2.style("color","green").style("font-size","36px").style("font-style","italic");
+
+        var body = d3.select("body");
+        body.append("p").text("Append to last SubMara玥").style("color","gray")//---->>Append()--在选择集的末尾插入元素
+
+        body.insert("div","#spec").style("width","20px").style("height","20px").style("background","pink")//--->>insert()--在指定的选择集前插入元素
+
+        var pmove = d3.select("#move");
+        pmove.remove();
+    </script>
+</body>
+</html>
