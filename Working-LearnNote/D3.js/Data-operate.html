@@ -3,8 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <title>D3.js中关于数据的相关操作</title>
+    <script src="https://cdn.bootcss.com/d3/5.9.0/d3.min.js"></script>
 </head>
 <body>
+    <p>Apple</p>
+    <p>Banner</p>
+    <p>Cow</p>
 
+    <script>
+        //数据绑定：datum()--绑定单个数据到选择集上；data()--绑定一组数据到选择集上
+
+        var str = 'China';
+        var body = d3.select('body');
+        var p = body.selectAll('p');
+
+        p.datum(str).text(function(d,i){
+            return "第" + i + "个绑定的数据是" + d;
+        })
+
+        //function(d,i){}--> d代表数据，i指代对应的元素
+
+        var dataset = ["Lovin you","Marry me","Submara"];
+        p.data(dataset).text(function(d,i){
+            return d;
+        })
+
+    </script>
 </body>
 </html>
