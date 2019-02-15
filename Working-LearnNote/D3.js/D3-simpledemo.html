@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple-demo D3.js学习--第一个简单的图表demo</title>
+    <script src="https://cdn.bootcss.com/d3/5.9.0/d3.min.js"></script>
+</head>
+<body>
+    <script>
+        /**
+        * D3.js--绘制图表时需要画布支撑，建议使用SVG,原因是D3所提供的许多的图形生成器只支持SVG绘制。
+        */
+
+        var width = 300;
+        var height = 300;
+        // 准备需要的画布
+        var svg = d3.select("body").append("svg").attr("width",width).attr("height",height);
+        // 准备数据
+        var dataset = [250,140,270,130,90];
+        var rectHeight = 25;
+
+        svg.selectAll("rect")                   // 选择svg内的所矩形rect
+            .data(dataset)                      // 绑定数组到选择集上
+            .enter()                            // 指定选择集的enter部分
+            .append("rect")                     // 添加足够数量的矩形元素
+            .attr("x",10)
+            .attr("y",function(d,i){
+                return i * rectHeight;
+            })
+            .attr("width",function(d){
+                return d;
+            })
+            .attr("height",rectHeight-5)
+            .attr("fill","steelblue")           // 设置矩形的颜色
+    </script>
+</body>
+</html>
