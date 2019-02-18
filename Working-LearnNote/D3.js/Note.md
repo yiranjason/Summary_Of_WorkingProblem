@@ -2,7 +2,7 @@
 
 ### 个人学习顺序【代码顺序】
 
-1. __HelloWorld.html__        |*选择集概念入门*
+1. __[HelloWorld.html](HelloWorld.html)__        |*选择集概念入门*
             
 2. __Element-operation.html__ | *选择集的选择、增加、删除操作*
 
