@@ -74,7 +74,7 @@
                             return yScale(d);
                         })
                         .attr("dx",function(){
-                            return (xScale.rangeBand() - 4)/2;
+                            return (xScale.rangeBand() - 15)/2;
                         })
                         .attr("dy",function(d){
                             return 20;
@@ -85,7 +85,7 @@
         // 添加坐标轴
         svg.append("g")
           .attr("class","axis")
-          .attr("transform","translate(" + padding.left + "," + (height - padding.bottom - 2) + ")")
+          .attr("transform","translate(" + padding.left + "," + (height - padding.bottom - 6) + ")")
           .call(xAxis);
 
         svg.append("g")
