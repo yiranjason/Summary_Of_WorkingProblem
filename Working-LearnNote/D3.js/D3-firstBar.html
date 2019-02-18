@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>D3.js-入门-第一个柱形图bar-demo</title>
+    <script src="https://cdn.bootcss.com/d3/3.5.16/d3.min.js"></script>
+</head>
+<body>
+    <script>
+        /**
+        * 绘制完整的柱形图demo
+        * 1.添加SVG画布
+        * 2.定义数据和比例尺
+        * 3.定义坐标轴
+        * 4.添加矩形(柱形)和文字元素
+        * 5.添加坐标轴上的文字元素
+        */
+
+        // 画布大小
+        var width = 500;
+        var height = 500;
+        var padding = {left:30,right:30,top:30,bottom:30};
+        // 添加SVG到body内
+        var svg = d3.select("body")
+                    .append("svg")
+                    .attr("width",width)
+                    .attr("height",height);
+        // 定义数据
+        var dataset = [10,20,30,25,45,12,39,4];
+        // x轴的比例尺
+        var xScale = d3.scale.ordinal()
+                        .domain(d3.range(dataset.length))
+                        .rangeRoundBands([0,width - padding.left - padding.right]);
+        // y轴的比例尺
+        var yScale = d3.scale.linear()
+                        .domain([0,d3.max(dataset)])
+                        .range([height - padding.top - padding.bottom,0])
+        // 定义坐标轴
+        var xAxis = d3.svg.axis()
+                        .scale(xScale)
+                        .orient("bottom")
+        var yAxis = d3.svg.axis()
+                        .scale(yScale)
+                        .orient("left")
+        // 矩形元素
+        var rects = svg.selectAll("Myrect")
+                        .data(dataset)
+                        .enter()
+                        .append("rect")
+                        .attr("class","Myrect")
+                        .attr("transform","translate("+ padding.left + "," + padding.top +")")
+                        .attr("x",function(d,i){
+                            return xScale(i) + 4;
+                        })
+                        .attr("y",function(d){
+                            return yScale(d)
+                        })
+                        .attr("width", xScale.rangeBand() - 4)
+                        .attr("height", function(d){
+                            return height - padding.top - padding.bottom - yScale(d);
+                        })
+                        .attr("fill","steelblue")
+        // 文字元素
+        var texts = svg.selectAll(".MyText")
+                        .data(dataset)
+                        .enter()
+                        .append("text")
+                        .attr("class","MyText")
+                        .attr("transform","translate(" + padding.left + "," + padding.top + ")")
+                        .attr("x", function(d,i){
+                            return xScale(i) + 2;
+                        } )
+                        .attr("y",function(d){
+                            return yScale(d);
+                        })
+                        .attr("dx",function(){
+                            return (xScale.rangeBand() - 4)/2;
+                        })
+                        .attr("dy",function(d){
+                            return 20;
+                        })
+                        .text(function(d){
+                            return d;
+                        });
+        // 添加坐标轴
+        svg.append("g")
+          .attr("class","axis")
+          .attr("transform","translate(" + padding.left + "," + (height - padding.bottom - 2) + ")")
+          .call(xAxis);
+
+        svg.append("g")
+          .attr("class","axis")
+          .attr("transform","translate(" + padding.left + "," + padding.top + ")")
+          .call(yAxis);
+    </script>
+</body>
+</html>
