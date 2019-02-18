@@ -2,17 +2,17 @@
 
 ### 个人学习顺序【代码顺序】
 
-1. __[HelloWorld.html](HelloWorld.html)__        |*选择集概念入门*
+1. __[HelloWorld.html](HelloWorld.html)__ |*选择集概念入门*
             
-2. __Element-operation.html__ | *选择集的选择、增加、删除操作*
+2. __[Element-operation.html](Element-operation.html)__ | *选择集的选择、增加、删除操作*
 
-3. __Data-operate.html__      | *数据绑定⇨选择集* 
+3. __[Data-operate.html](Data-operate.html)__ | *数据绑定⇨选择集* 
 
-4. __D3-simpledemo.html__     | *简易demo⇨了解d3绘制图表的组成部分*
+4. __[D3-simpledemo.html](D3-simpledemo.html)__ | *简易demo⇨了解d3绘制图表的组成部分*
 
-5. __D3-scaleLinear.html__    | *D3.js--线性比例尺*
+5. __[D3-scaleLinear.html](D3-scaleLinear.html)__ | *D3.js--线性比例尺*
 
-6. __D3-firstBar.html__       | *D3.js--柱形图入门*
+6. __[D3-firstBar.html](D3-firstBar.html)__ | *D3.js--柱形图入门*
 
 ***
 
