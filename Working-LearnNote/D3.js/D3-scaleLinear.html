@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>D3.js--入门[比例尺的使用]</title>
+    <script src="https://cdn.bootcss.com/d3/5.9.0/d3.min.js"></script>
+</head>
+<body>
+    <script>
+        /**
+        * D3.js--绘制图表时需要画布支撑，建议使用SVG,原因是D3所提供的许多的图形生成器只支持SVG绘制。
+        */
+
+        var width = 300;
+        var height = 300;
+        // 准备需要的画布
+        var svg = d3.select("body").append("svg").attr("width",width).attr("height",height);
+
+
+        // 准备数据
+        var dataset = [250,140,270,130,90];     // 数据在页面中以具体像素显示。but--数值过大时，显然不合适【比例尺的使用】
+        var rectHeight = 25;
+
+        var dataset2 = [1.2,2.3,0.9,1.5,3.3];
+        // 比较小的数据值时，考虑区间进行，最小值用0，最大值用300【像素值】标示
+        var min = d3.min(dataset2)              // d3.min() 选择最小值
+        var max = d3.max(dataset2)              // d3.max() 选择最大值
+
+        var linescale = d3.scaleLinear()  // 线性比例尺
+                        .domain([min,max])      // 定义域
+                        .range([0,300])         // 值域
+
+
+        svg.selectAll("rect")                   // 选择svg内的所矩形rect
+            .data(dataset2)                      // 绑定数组到选择集上
+            .enter()                            // 指定选择集的enter部分
+            .append("rect")                     // 添加足够数量的矩形元素
+            .attr("x",10)
+            .attr("y",function(d,i){
+                return i * rectHeight;
+            })
+            .attr("width",function(d){
+                return linescale(d);               // 返回比例尺
+            })
+            .attr("height",rectHeight - 5)
+            .attr("fill","steelblue")           // 设置矩形的颜色
+    </script>
+</body>
+</html>
