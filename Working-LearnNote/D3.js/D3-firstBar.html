@@ -43,7 +43,7 @@
                         .scale(yScale)
                         .orient("left")
         // 矩形元素
-        var rects = svg.selectAll("Myrect")
+        var rects = svg.selectAll(".Myrect")
                         .data(dataset)
                         .enter()
                         .append("rect")
@@ -60,6 +60,16 @@
                             return height - padding.top - padding.bottom - yScale(d);
                         })
                         .attr("fill","steelblue")
+                        .on("mouseover",function(d,i){         // ----->>  交互模型
+                            d3.select(this)
+                                .attr("fill","yellow");
+                        })
+                        .on("mouseout",function(d,i){
+                            d3.select(this)
+                                .transition()
+                                .duration(800)
+                                .attr("fill","steelblue")
+                        })
         // 文字元素
         var texts = svg.selectAll(".MyText")
                         .data(dataset)
