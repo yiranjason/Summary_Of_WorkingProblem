@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>D3.js--入门--饼状图</title>
+    <script src="https://cdn.bootcss.com/d3/3.0.0/d3.min.js"></script>
+</head>
+<body>
+    <script>
+        /**
+        * 绘制饼状图demo
+        * 1.给出的数据值因为无法直接提供绘制饼状图需要的数据，因此需要进行布局
+        * 2.绘制图形时，由于图形的路径path计算难度问题，需要生成器
+        * 3.布局-->生成器-->绘制图形-->添加相应数据元素
+        */
+
+        // 准备画布
+        var width = 400;
+        var height = 400;
+        var svg = d3.select("body")
+                    .append("svg")
+                    .attr("width",width)
+                    .attr("height",height)
+
+        // 布局【数据转换】
+        var cake = d3.layout.pie();
+        // 数据处理
+        var dataset = [30,14,26,55,43,11];
+        var piedata = cake(dataset);   // piedata 是转换后需要的数据，包括数据值data.起始角度startAngle.终止角度endAngle
+        // 弧生成器：饼状图的绘制就是需要每一段的弧形path
+        var outerRadius = 150;   // 外半径
+        var innerRadius = 0;     // 内半径，0表示中间没有空白。--->> 拓展：数值不为零时则绘制出环形图
+        var arc = d3.svg.arc()   // 弧生成器
+                    .innerRadius(innerRadius)   //  设置内半径
+                    .outerRadius(outerRadius);  //  设置外半径
+        // 开始绘制
+        var color = d3.scale.category10();     // 颜色比例尺
+        var arcs = svg.selectAll("g")
+                    .data(piedata)
+                    .enter()
+                    .append("g")
+                    .attr("transform","translate("+(width/2)+","+(width/2)+")");
+        // 路径添加
+        arcs.append("path")
+            .attr("d",function(d){
+                return arc(d)
+            })
+            .attr("fill",function(d,i){
+                return color(i)
+            })
+        // 文本添加
+        arcs.append("text")
+            .attr("transform",function(d){
+                return "translate("+arc.centroid(d)+")"     //arc.centroid() 计算弧中心
+            })
+            .attr("text-anchor","middle")        // svg-text : text-anchor 【文本对齐方式】
+            .text(function(d){
+                return d.data
+            })
+    </script>
+</body>
+</html>
