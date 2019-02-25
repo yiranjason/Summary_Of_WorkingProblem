@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>D3.js--入门--力导向图demo</title>
+    <script src="https://cdn.bootcss.com/d3/3.0.0/d3.min.js"></script>
 </head>
 <body>
     <script>
@@ -19,7 +20,17 @@
                     .append("svg")
                     .attr("width",width)
                     .attr("height",height)
-        // 初始数据
+        // 初始数据 -- 节点
+        var nodes = [{name:"桂林"},{name:"广州"},{name:"厦门"},{name:"杭州"},{name:"上海"},{name:"青岛"},{name:"天津"}];
+        // 初始数据 -- 连线
+        var edges = [{source:0,target:1},{source:0,target:2},{source:0,target:3},{source:1,target:4},{source:1,target:5},{source:1,target:6}];
+        // 布局 -- 力导向图
+        var force = d3.layout.force()
+                    .node(nodes)                 // 指定节点数组
+                    .links(edges)                // 指定连线数组
+                    .size([width,height])        // 指定作用区域
+                    .linkDistance(150)           // 指定连线长度
+                    .charge([-400]);             // 相互之间的作用力
 
     </script>
 </body>
