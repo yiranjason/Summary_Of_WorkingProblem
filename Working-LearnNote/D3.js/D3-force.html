@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>D3.js--入门--力导向图demo</title>
-    <script src="https://cdn.bootcss.com/d3/3.0.0/d3.min.js"></script>
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 </head>
 <body>
     <script>
@@ -11,6 +11,7 @@
         * 绘制里导向图demo
         * 1.布局【力布局force】
         * 2.node节点数据+edges 路线
+        * 【line:线 | circle:圆 | text:文本】
         */
 
         // 准备画布
@@ -26,12 +27,62 @@
         var edges = [{source:0,target:1},{source:0,target:2},{source:0,target:3},{source:1,target:4},{source:1,target:5},{source:1,target:6}];
         // 布局 -- 力导向图
         var force = d3.layout.force()
-                    .node(nodes)                 // 指定节点数组
+                    .nodes(nodes)                 // 指定节点数组
                     .links(edges)                // 指定连线数组
                     .size([width,height])        // 指定作用区域
                     .linkDistance(150)           // 指定连线长度
                     .charge([-400]);             // 相互之间的作用力
-        // IId
+        force.start()   // 力学开始作用
+        // 添加连线
+        var svg_edges = svg.selectAll("line")
+                        .data(edges)
+                        .enter()
+                        .append("line")
+                        .style("stroke","#ddd")
+                        .style("stroke-width",2)
+        var color = d3.scale.category20();
+        // 添加节点
+        var svg_nodes = svg.selectAll("circle")
+                        .data(nodes)
+                        .enter()
+                        .append("circle")
+                        .attr("r",20)
+                        .style("fill",function(d,i){
+                            return color(i)
+                        })
+                        .call(force.drag);      // 使节点可以拖动
+        // 添加描述节点的文字
+        var svg_texts = svg.selectAll("text")
+                        .data(nodes)
+                        .enter()
+                        .append("text")
+                        .style("fill", "black")
+                        .attr("dx", 20)
+                        .attr("dy", 8)
+                        .text(function(d){
+                            return d.name;
+                         });
+        /**
+        * 备注点:
+        * 调用call(force.drag()),使得节点可以被拖动
+        * 由于力布局图的特殊性。节点和连线一直处于运动状态。故需要实时刷新节点位置和线的位置
+        * 力导向图布局force有一个事件tick，每进行到一个时刻，都要调用它更新的内容就写在它的监听器里就好。
+        */
+
+        // tick事件监听
+        force.on("tick",function(){
+            // 更新节点坐标
+            svg_nodes.attr("cx",function(d){return d.x })
+                    .attr("cy",function(d){return d.y });
+            // 更新连线坐标
+            svg_edges.attr("x1",function(d){ return d.source.x; })
+                    .attr("y1",function(d){ return d.source.y; })
+                    .attr("x2",function(d){ return d.target.x; })
+                    .attr("y2",function(d){ return d.target.y; });
+            //更新文字坐标
+            svg_texts.attr("x", function(d){ return d.x; })
+                    .attr("y", function(d){ return d.y; });
+        })
     </script>
 </body>
 </html>
