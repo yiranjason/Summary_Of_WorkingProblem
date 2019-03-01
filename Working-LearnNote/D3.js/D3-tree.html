@@ -14,6 +14,20 @@
         * 【line:线 | circle:圆 | text:文本】
         * d3.svg.diagonal() 对角线生成器
         */
+
+        // 准备画布
+        var width = 400;
+        var height = 400;
+        var svg = d3.select("body")
+                    .append("svg")
+                    .attr("width",width)
+                    .attr("height",height)
+        // 定义布局 -- 集群布局
+        var tree = d3.layout.tree()
+                    .size([width,height])
+                    .separation(function(a,b){
+                        return (a.parent == b.parent ? 1:2);
+                    })     // 取得或设置相邻节点的间隔函数。
     </script>
 </body>
 </html>
