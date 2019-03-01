@@ -18,17 +18,92 @@
         // 准备画布
         var width = 400;
         var height = 400;
-        var svg = d3.select("body")
-                    .append("svg")
-                    .attr("width",width)
-                    .attr("height",height)
+        var svg = d3.select("body").append("svg")
+            .attr("width", width)
+            .attr("height", height)
+            .append("g")
+	       .attr("transform", "translate(40,0)");
         // 定义布局 -- 集群布局
         var tree = d3.layout.tree()
                     .size([width,height])
                     .separation(function(a,b){
                         return (a.parent == b.parent ? 1:2);
                     })     // 取得或设置相邻节点的间隔函数。
-        // 哈哈
+        // 转换数据 [练习demo时在本地进行，故注释此段代码。使用更便捷的方式]
+//        d3.json("demo-prov.json",function(error,root)[       // d3.json用来向服务器请求json数据
+//            var nodes = tree.nodes(root);
+//            var links = tree.links(nodes);
+//        ])
+        var data = {
+            "name":"中国",
+            "children":[
+                {
+                    "name":"浙江",
+                    "children":[
+                        {"name":"杭州"},
+                        {"name":"宁波"},
+                        {"name":"绍兴"},
+                        {"name":"温州"}
+                    ]
+                },
+                {
+                    "name":"新疆",
+                    "children":[
+                        {"name":"乌鲁木齐"},
+                        {"name":"吐鲁番"},
+                        {"name":"哈密"},
+                        {"name":"克拉玛依"}
+                    ]
+                },
+                {
+                    "name":"广西",
+                    "children":[
+                        {   name:"桂林",
+                            "children":[
+                             {"name":"秀峰区"},
+                             {"name":"象山区"}
+                            ]
+                        },
+                        {"name":"南宁"},
+                        {"name":"柳州"}
+                    ]
+                }
+            ]
+        };
+        var root = JSON.parse(JSON.stringify(data));
+
+        var nodes = tree.nodes(root);
+        var links = tree.links(nodes);
+
+        // 创建对角生成器
+        var diagonal = d3.svg.diagonal()
+        .projection(function(d) { return [d.y, d.x]; });
+
+
+        var link = svg.selectAll(".link")
+          .data(links)
+          .enter()
+          .append("path")
+          .attr("class", "link")
+          .attr("d", diagonal);
+
+        var node = svg.selectAll(".node")
+          .data(nodes)
+          .enter()
+          .append("g")
+          .attr("class", "node")
+          .attr("transform", function(d) { return "translate(" + d.y + "," + d.x + ")"; })
+
+        node.append("circle")
+          .attr("r", 4.5);
+
+        node.append("text")
+          .attr("dx", function(d) { return d.children ? -8 : 8; })
+          .attr("dy", 3)
+          .style("text-anchor", function(d) { return d.children ? "end" : "start"; })
+          .text(function(d) { return d.name; });
+
+
     </script>
 </body>
 </html>
