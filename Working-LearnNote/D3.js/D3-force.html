@@ -28,11 +28,11 @@
         // 布局 -- 力导向图
         var force = d3.layout.force()
                     .nodes(nodes)                 // 指定节点数组
-                    .links(edges)                // 指定连线数组
-                    .size([width,height])        // 指定作用区域
-                    .linkDistance(150)           // 指定连线长度
-                    .charge([-400]);             // 相互之间的作用力
-        force.start()   // 力学开始作用
+                    .links(edges)                 // 指定连线数组
+                    .size([width,height])         // 指定作用区域
+                    .linkDistance(150)            // 指定连线长度
+                    .charge([-400]);              // 相互之间的作用力
+        force.start()     // 力学开始作用
         // 添加连线
         var svg_edges = svg.selectAll("line")
                         .data(edges)
