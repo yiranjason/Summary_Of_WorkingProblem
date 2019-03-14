@@ -27,5 +27,14 @@
     - JS-workingSummary
         - [type类型判断](./JS_workingdemo/JS-workingSubmmary/1.type判断.js)
     - [区域外点击事件](./JS_workingdemo/click_outarea.html)
+    - [禁用浏览器右键默认菜单](./JS_workingdemo/Disable_osright.html)
+    - [回车键触发事件](./JS_workingdemo/Enter_todo.js)
+    - [获取时间戳](./JS_workingdemo/Obtain_Time.html)
+    - [JS-cookie记住密码](./JS_workingdemo/RemeberPass.html)
+    - [多行文本溢出隐藏](./JS_workingdemo/text_overview.html)
+- Third_party_plugin | 第三方插件
+    - [日期选择控件My97DatePicker](./Third_party_plugin/My97DatePicker_using)
+    - [强大的滑动插件SuperSlider](./Third_party_plugin/SuperSlider_using)
+- working_issue -->> working_Standard | 总结的工作应用标准
 
 
