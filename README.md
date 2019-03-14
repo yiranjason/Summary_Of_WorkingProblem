@@ -1,5 +1,5 @@
 # WorkingSet
-工作中總結的一些常見問題以及個人學習的技術點和練習用demo  Get☺
+工作中總結的一些常見問題以及個人學習的技術點和練習用demo  Get :white_check_mark:
 ***
 
 ## 目录
