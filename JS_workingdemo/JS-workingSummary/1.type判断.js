@@ -48,3 +48,8 @@ isUndefined(o){
 isObj(o){
     return Object.prototype.toString.call(o).slice(8,-1) === "Object"
 }
+
+// 是否是Symbol类型
+isSymbol(o){
+    return Object.prototype.toString.call(o).slice(8,-1) === "Symbol"
+}
