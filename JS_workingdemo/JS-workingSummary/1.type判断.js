@@ -43,3 +43,8 @@ isNull(o){
 isUndefined(o){
     return Object.prototype.toString.call(o).slice(8,-1) === "Undefined"
 }
+
+// 是否为Object对象类型
+isObj(o){
+    return Object.prototype.toString.call(o).slice(8,-1) === "Object"
+}
