@@ -64,3 +64,6 @@ isArray(o){
 }
 
 // 是否为Function函数类型
+isFun(o){
+    return Object.prototype.toString.call(o).slice(8,-1) === "Function"
+}
