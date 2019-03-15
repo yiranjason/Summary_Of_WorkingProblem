@@ -49,7 +49,7 @@ isObj(o){
     return Object.prototype.toString.call(o).slice(8,-1) === "Object"
 }
 
-// 是否是Symbol类型
+// 是否为Symbol类型
 isSymbol(o){
     return Object.prototype.toString.call(o).slice(8,-1) === "Symbol"
 }
@@ -58,7 +58,9 @@ isSymbol(o){
 * 引用类型
 */
 
-// 是否是数组
+// 是否为Array数组类型
 isArray(o){
     return Object.prototype.toString.call(o).slice(8,-1) === "Array"
 }
+
+// 是否为Function函数类型
