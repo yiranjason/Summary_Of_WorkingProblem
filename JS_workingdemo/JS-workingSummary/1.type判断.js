@@ -54,4 +54,11 @@ isSymbol(o){
     return Object.prototype.toString.call(o).slice(8,-1) === "Symbol"
 }
 
-//
+/**
+* 引用类型
+*/
+
+// 是否是数组
+isArray(o){
+    return Object.prototype.toString.call(o).slice(8,-1) === "Array"
+}
