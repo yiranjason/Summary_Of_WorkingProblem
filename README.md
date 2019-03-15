@@ -24,7 +24,7 @@
     - [柱线混合图](./Echaets_working/柱线混合图.html)
 - **JS_workingdemo**
     - JS-workingSummary
-        - [type类型判断](./JS_workingdemo/JS-workingSubmmary/1.type判断.js)
+        - [type类型判断](./JS_workingdemo/JS-workingSummary/1.type判断.js)
     - [区域外点击事件](./JS_workingdemo/click_outarea.html)
     - [禁用浏览器右键默认菜单](./JS_workingdemo/Disable_osright.html)
     - [回车键触发事件](./JS_workingdemo/Enter_todo.js)
