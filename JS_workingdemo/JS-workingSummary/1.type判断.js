@@ -67,3 +67,10 @@ isArray(o){
 isFun(o){
     return Object.prototype.toString.call(o).slice(8,-1) === "Function"
 }
+
+/**
+* type判断 ----->>> 拓展
+*/
+
+// RegExp 判断
+
