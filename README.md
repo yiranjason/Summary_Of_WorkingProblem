@@ -15,6 +15,7 @@
     - [弹窗](./CSS_workingdemo/mask.html)
     - [radio/checkbox样式重置](./CSS_workingdemo/reset_radio-checkbox.html)
     - [滚动条](./CSS_workingdemo/scroll.html)
+    - [文本对齐方式](./CSS_workingdemo/text-align.css)
     - [文本内容渐变色](./CSS_workingdemo/text-fill-color.css)
     - [CSS三角形](./CSS_workingdemo/tringle.html)
     - [Z-index-BUG](./CSS_workingdemo/zIndex_bug.html)
