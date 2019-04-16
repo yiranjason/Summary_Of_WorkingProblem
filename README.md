@@ -1,6 +1,8 @@
 # WorkingSet
 工作中總結的一些常見問題以及個人學習的技術點和練習用demo  Get :white_check_mark:
 ***
+[![996.icu](https://img.shields.io/badge/link-996.icu-red.svg)](https://996.icu)
+***
 
 ## 目录
 
