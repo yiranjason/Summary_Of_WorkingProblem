@@ -38,6 +38,7 @@
 - **Third_party_plugin | 第三方插件**
     - [日期选择控件My97DatePicker](./Third_party_plugin/My97DatePicker_using)
     - [强大的滑动插件SuperSlider](./Third_party_plugin/SuperSlider_using)
+    - [数字翻转计数器插件odometer](./Third_party_plugin/Odometer_using)
 - **working_issue -->> working_Standard | 总结的工作应用标准**
 
 

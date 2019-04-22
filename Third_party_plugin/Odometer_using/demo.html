@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="odometer-theme-default.css">
+    <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.js"></script>
+    <script src="odometer.js"></script>
+    <script>
+        window.odometerOptions = {
+          format: '(ddd).dd'  // 滚动的数字区域的显示格式
+        };
+    </script>
+</head>
+<body>
+    <!--说明：针对每个滚动的数字的大小，需要参考odometer-theme-default.css内的设置-->
+    <div class="odometer">
+        468.85
+    </div>
+    <script>
+        $(document).ready(function(){
+            var numrun = 468.85;
+            setInterval(function(){
+                numrun += 12.24;
+                $(".odometer").html(numrun.toFixed(2));
+                return numrun;
+            },2000)
+        })
+    </script>
+</body>
+</html>
