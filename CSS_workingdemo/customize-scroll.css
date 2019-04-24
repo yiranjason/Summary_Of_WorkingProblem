@@ -12,6 +12,9 @@
 {text-overflow:clip;}/**--->修剪文本**/
 {text-overflow:ellipsis}/**--->省略号显示被修剪得文本**/
 
+
+/** Chrome适用 **/
+
 /*
 1. ::-webkit-scrollbar                滚动条整体部分
 2. ::-webkit-scrollbar-thumb          滚动条里面的小方块，能向上向下移动（或向左向右移动）
@@ -20,4 +23,12 @@
 5. ::-webkit-scrollbar-track-piece    内层轨道，滚动条中间部分
 6. ::-webkit-scrollbar-corner         边角，即垂直滚动条和水平滚动条相交的地方
 7. ::-webkit-resizer                  两个滚动条的交汇处上用于拖动调整元素大小的小控件
+*/
+
+/** IE适用 **/
+
+/*
+1. scrollbar-3dlight-color            滚动框的颜色以及滚动条箭头左上边缘的颜色
+2. scrollbar-highlight-color
+
 */
