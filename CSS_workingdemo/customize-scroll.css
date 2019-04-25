@@ -30,6 +30,10 @@
 /*
 1. scrollbar-3dlight-color            滚动框的颜色以及滚动条箭头左上边缘的颜色
 2. scrollbar-highlight-color          滚动条的3d高亮边框
-3. scrollbar-face-color               滚动条小滑块的颜色 类比 ::-webkit-scrollbar-thumb
-4. scrollbar
+3. scrollbar-face-color               滚动条小滑块的颜色  类比 ::-webkit-scrollbar-thumb
+4. scrollbar-arrow-color              滚动条两端按钮箭头的颜色
+5. scrollbar-shadow-color             滚动条小滑块边框线的颜色 即通常应当设置与scrollbar-face-color颜色一样
+6. scrollbar-darkshadow-color         滚动条小滑块投影的颜色  建议设置成transparent
+7. scrollbar-base-color               滚动条整体部分的背景基色
+8. scrollbar-trackp-color             滚动条拖动区域的颜色  类比 ::-webkit-scrollbar-track
 */
