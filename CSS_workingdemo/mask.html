@@ -32,5 +32,33 @@
         $('.mask').show();
         $('html,body').addClass('maskstyle');
     })
+
+    let obj = {
+        a:"hello",
+        b:{
+            a:"world",
+            b:21
+        },
+        c:["box","div"],
+        d:function(){
+            alert("hello")
+        }
+    }
+    let cloneObj = Object.assign({},obj);
+    cloneObj.a = "ck";
+    cloneObj.b.a = "kl";
+    cloneObj.b.b = 24;
+    cloneObj.c = [1,2,3];
+    cloneObj.d = function(){
+        alert("1241235")
+    }
+    console.log(obj.a)
+    console.log("-----")
+    console.log(obj.b);
+    console.log("------")
+    console.log(obj.d);
+
+
+
 </script>
 </html>
