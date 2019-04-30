@@ -22,3 +22,6 @@
     display: block;
     visibility: hidden;
 }
+
+/*Way02*/
+.box {overflow:hidden;}
