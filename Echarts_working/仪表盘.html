@@ -7,10 +7,86 @@
     <script src="echarts/echarts.js"></script>
 </head>
 <body>
-    <div id="SubMara" style="width:1000px; height:1000px; margin:200px auto;"></div>
+    <div id="SubMara" style="width:800px; height:600px; margin:100px auto; background:#211e55; opacity:.6; filter:alpha(opacity=60);"></div>
     <script>
         var SubMara = echarts.init(document.getElementById("SubMara"));
+        //---->三组仪表盘的数据
+        var SubMaraData = [
+            ["线上闲置中",125],["线下闲置中",89],["待审核",82]
+        ];
+        //---->三组仪表盘的位置
+        var SubMaraPosition = [
+            ["25%","50%"],["50%","50%"],["75%","50%"]
+        ];
+        var SubMaraOption = {
+        series:[
+            {
+                type:"gauge",
+                radius:"50%",
+                min:0,
+                max:200,
+                center:["50%","60%"],
+                startAngle:210,
+                endAngle:-30,
+                axisLine:{
+                    show:true,
+                    lineStyle:{
+                        width:10,
+                        color: [
+                            [1,
+                                new echarts.graphic.LinearGradient(0, 0, 1, 0, [
 
+                                    {
+                                        offset: 0,
+                                        color: '#00ffff'
+                                    },{
+                                        offset: 1,
+                                        color: '#0f9bff'
+                                    }
+                                ])
+                            ]
+                        ],
+                    }
+                },
+                animationEasing:"elasticInOut",
+                splitLine:{
+                    show:false
+                },
+                axisLabel:{
+                    show:false
+                },
+                pointer:{
+                    width:8
+                },
+                axisTick:{
+                    show:true,
+                    length:4,
+                    lineStyle:{
+                        color:"#fff"
+                    }
+                },
+                title:{
+                    offsetCenter:[0,"50%"],
+                    color:"#fff",
+                    fontSize:20
+                },
+                detail:{
+                    show:true,
+                    offsetCenter:[0,"-40%"],
+                    textStyle:{
+                        color:"#ffffff",//---->>>此处修改文字的颜色时需要完整的十六进制代码，不可简写
+                        fontSize:50,
+                        fontFamily:"pmzd"
+                    },
+                },
+                data:[{
+                    name:"线下闲置中",
+                    value:89
+                }]
+            }
+        ]
+    };
+        SubMara.setOption(SubMaraOption);
     </script>
 </body>
 </html>
