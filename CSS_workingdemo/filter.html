@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>强大的滤镜</title>
+    <style>
+        *{margin:0; padding:0;}
+        html,body {width:100%; height:100%;}
+        body {display:flex; justify-content:space-evenly; align-content:space-evenly; flex-wrap:wrap;}
+        .Imgbox {width:400px; height:270px; background:url(Images/DLRB.jpg) no-repeat center; background-size:100%;}
+        /* 失焦 2px */
+        .blur {filter:blur(2px);}    
+        /* 灰阶 100% 取值为 0-100% */
+        .grayscale {filter:grayscale(100%);}        
+        /* 复古 */
+        .sepia {filter:sepia(100%);}    
+        /* 饱和度 */
+        .saturate {filter:saturate(5);}  
+        /* 色相旋转 */
+        .hue-rotate {filter:hue-rotate(45deg);}
+        /* 反色 */
+        .invert {filter:invert(.6);}
+        /* 透明度 */
+        .opacity {filter:opacity(.1);}
+        /* 高亮 */
+        .brightness {filter:brightness(4);}
+        /* 对比度  0->∞ */
+        .contrast {filter:contrast(.5);}
+        /* 投影 */
+        .drop-shadow {filter:drop-shadow(5px 5px 20px rgba(0,0,0,.15));}
+    </style>
+</head>
+<body>
+    <div class="Imgbox blur"></div>
+    <div class="Imgbox grayscale"></div>
+    <div class="Imgbox sepia"></div>
+    <div class="Imgbox saturate"></div>
+    <div class="Imgbox hue-rotate"></div>
+    <div class="Imgbox invert"></div>
+    <div class="Imgbox opacity"></div>
+    <div class="Imgbox brightness"></div>
+    <div class="Imgbox contrast"></div>
+    <div class="Imgbox drop-shadow"></div>
+</body>
+</html>
