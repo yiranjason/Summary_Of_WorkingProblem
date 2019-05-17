@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .filter-mix {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            height: 200px;
+            filter: contrast(10);
+            background: #fff;
+        }
+        .filter-mix::before {
+            content: "";
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: #333;
+            top: 40px;
+            left: 40px;
+            z-index: 2;
+            filter: blur(6px);
+            box-sizing: border-box;
+            animation: filterBallMove 4s ease-out infinite;
+        }
+        .filter-mix::after {
+            content: "";
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: #3F51B5;
+            top: 60px;
+            right: 40px;
+            z-index: 2;
+            filter: blur(9px);
+            animation: filterBallMove2 4s ease-out infinite;
+        }
+        @keyframes filterBallMove {
+            50% {
+                left: 140px;
+            }
+        }
+        @keyframes filterBallMove2 {
+            50% {
+                right: 140px;
+            }
+        }
+    </style>
+</head>
+<body>
+   
+    <!-- 
+        * 实现过程涉及属性： blur() | 失焦-高斯模糊 、 contrast() | 对比度
+        * 定义需要显示的 ::before && ::after 两个伪类元素的基础样式 及 blur() 使其产生 模糊像素(图形) 
+        * 定义运动模型 使其进行穿插 
+        * 对于父级定义 contrast() [数值大于0] 产生将模糊外边更加实体化，丝涟效果
+    -->
+
+    <div class="container">
+        <div class="filter-mix"></div>
+    </div> 
+</body>
+</html>
