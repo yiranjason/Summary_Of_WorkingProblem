@@ -14,7 +14,7 @@
     - [清除浮动](./CSS_workingdemo/clearfloat.css)
     - [背景色渐变|透明度及input输入框placeholder](./CSS_workingdemo/compatible.css)
     - [自定义滚动条](./CSS_workingdemo/customize-scroll.css)
-    - [CSS滤镜](./CSS_workingdemo/drop-shadow.html)
+    - [投影及阴影](./CSS_workingdemo/drop-shadow.html)
     - [垂直水平居中](./CSS_workingdemo/level_vertical-center.css)
     - [弹窗](./CSS_workingdemo/mask.html)
     - [radio/checkbox样式重置](./CSS_workingdemo/reset_radio-checkbox.html)
@@ -23,6 +23,8 @@
     - [文本内容渐变色](./CSS_workingdemo/text-fill-color.css)
     - [CSS三角形](./CSS_workingdemo/tringle.html)
     - [Z-index-BUG](./CSS_workingdemo/zIndex_bug.html)
+    - [CSS滤镜](./CSS_workingdemo/filter.html)
+        - [CSS滤镜安利① - 高斯模糊+穿插效果](./CSS_workingdemo/filter-demo-moveInOut.html)
 - **Echarts_working**
     - [六芒图](./Echarts_working/六芒图.html)
     - [仪表盘](./Echaets_working/仪表盘.html)
