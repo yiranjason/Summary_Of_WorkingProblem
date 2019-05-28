@@ -27,6 +27,7 @@
     - [Z-index-BUG](./CSS_workingdemo/zIndex_bug.html)
     - [CSS滤镜](./CSS_workingdemo/filter.html)
         - [:smirk: CSS滤镜安利① - 高斯模糊+穿插效果](./CSS_workingdemo/filter-demo-moveInOut.html)
+        - [:smirk: CSS滤镜案例② - drop-shadow实现单标签logo](./CSS_workingdemo/filter-dropShadow-demo-tiktokLogo.html)
 - **Echarts_working**
     - [六芒图](./Echarts_working/六芒图.html)
     - [仪表盘](./Echaets_working/仪表盘.html)
