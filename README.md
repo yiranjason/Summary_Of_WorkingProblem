@@ -28,12 +28,13 @@
     - [CSS滤镜](./CSS_workingdemo/filter.html)
         - [:smirk: CSS滤镜安利① - 高斯模糊+穿插效果](./CSS_workingdemo/filter-demo-moveInOut.html)
         - [:smirk: CSS滤镜案例② - drop-shadow实现单标签logo](./CSS_workingdemo/filter-dropShadow-demo-tiktokLogo.html)
+    - [CSS变量](./CSS_workingdemo/cssVar.html)
+    - [CSS属性活用 -- 图形应用]
+        - [:smirk: 单标签-logo-Chrome](./CSS_workingdemo/onlytagsDemo.html)
 - **Echarts_working**
     - [六芒图](./Echarts_working/六芒图.html)
     - [仪表盘](./Echaets_working/仪表盘.html)
     - [柱线混合图](./Echaets_working/柱线混合图.html)
-    - [CSS属性活用 -- 图形应用]
-        - [:smirk: 单标签-logo-Chrome](./CSS_workingdemo/onlytagsDemo.html)
 - **JS_workingdemo**
     - JS-workingSummary
         - [type类型判断](./JS_workingdemo/JS-workingSummary/1.type判断.js)
