@@ -31,6 +31,7 @@
     - [CSS变量](./CSS_workingdemo/cssVar.html)
     - [CSS属性活用 -- 图形应用]
         - [:smirk: 单标签-logo-Chrome](./CSS_workingdemo/onlytagsDemo.html)
+    - [CSS实现滚动指示器](./CSS_workingdemo/scrollIndicator.html)
 - **Echarts_working**
     - [六芒图](./Echarts_working/六芒图.html)
     - [仪表盘](./Echaets_working/仪表盘.html)
