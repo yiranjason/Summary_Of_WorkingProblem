@@ -8,7 +8,7 @@
     background: -moz-linear-gradient(left, #002740, #008de7, #002740);
     background: -o-linear-gradient(left, #002740, #008de7, #002740);
     background: -ms-linear-gradient(left, #002740, #008de7, #002740);
-    background: linear-gradient(left, #002740, #008de7, #002740);
+    background: linear-gradient(to left, #002740, #008de7, #002740);
     filter: progid:DXImageTransform.Microsoft.gradient(GradientType = 1, startColorstr = #002740, endColorstr = #008de7);
 }
 
