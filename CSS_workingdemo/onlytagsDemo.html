@@ -25,11 +25,51 @@
             linear-gradient(180deg,#F44336 30%, transparent 30%);
           background-position:0 0;
         }
+        .bgGradientcolor {width:300px; height:100px;
+            background:#008ce4; background-size:250% 100%;
+            background: -webkit-gradient(linear, 0 100%, 0 0, from(#0981c7), to(#008de7), to(#0981c7));
+            background: -webkit-linear-gradient(left, #002740, #008de7, #002740);
+            background: -moz-linear-gradient(left, #002740, #008de7, #002740);
+            background: -o-linear-gradient(left, #002740, #008de7, #002740);
+            background: -ms-linear-gradient(left, #002740, #008de7, #002740);
+            background: linear-gradient(left, #002740, #008de7, #002740);
+            filter: progid:DXImageTransform.Microsoft.gradient(GradientType = 1, startColorstr = #002740, endColorstr = #008de7);
+        }
+        
+        .radial-gradient {
+            position: relative;
+            width: 262px; height: 262px;
+            border-radius: 50%;
+            background: linear-gradient(30deg, transparent 40%, rgba(42, 41, 40, .85) 40%) no-repeat 100% 0, linear-gradient(60deg, rgba(42, 41, 40, .85) 60%, transparent 60%) no-repeat 0 100%, repeating-radial-gradient(#2a2928, #2a2928 4px, #ada9a0 5px, #2a2928 6px);
+            background-size: 50% 100%, 100% 50%, 100% 100%;
+        }
+        .radial-gradient:after {
+            position: absolute;
+            top: 50%; left: 50%;
+            margin: -35px;
+            border: solid 1px #d9a388;
+            width: 68px; height: 68px;
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px #da5b33, inset 0 0 0 27px #da5b33;
+            background: #b5ac9a;
+            content: '';
+        }
+        
+        .conicGradient {
+            width:300px; height:300px; margin:50px; border-radius:50%; background:conic-gradient(red,green,blue)
+        }
     </style>
 </head>
 <body>
     <h5>单标签实现Logo及技术点分析</h5>
     <!-- Demo1 ** Chrome ** -->
     <div class="Chrome"></div>
+    
+    
+    <div class="bgGradientcolor"></div>
+    
+    <div class="radial-gradient"></div>
+    
+    <div class="conicGradient"></div>
 </body>
 </html>
